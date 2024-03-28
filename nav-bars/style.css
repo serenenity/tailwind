@@ -29,18 +29,30 @@ ul li{
 }
 
 a{
+    margin: 0 10px;
     text-decoration: none;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     text-transform: capitalize;
     color: #444;
+
+    transition: all 200ms ease-in;
+/*transition: transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+     transition-delay: 2s; */
+    /* transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); */
 }
 
 a:hover, a:active{
-    color: #222;
+    color: red;
+    background-color: #eee;
+    border-radius: 20px;
+    transform: translateX(10px);
 }
 
 a:focus{
     border-bottom: solid 2px blue;
+    transform: rotateY(10deg);
 }
 
 .users-features{
@@ -81,5 +93,73 @@ a:focus{
     top: .5rem;
     left: .75rem;
     z-index: 1000;
+}
 
+.drop-down-menue{
+    position: relative;
+    /* display: flex;
+    flex-direction: column; */
+
+    opacity: 0.5;
+    transition: all 3s ease-out;
+}
+
+.drop-down-menue:hover {
+    opacity: 1;
+    /* transform: translateY(0); */
+}
+
+
+.drop-down{
+    width: 20rem;
+    position: absolute;
+    top: 3.5rem;
+    border-radius: 5px;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    background-color: rgb(219, 209, 229); 
+    /* z-index: -2; */
+}
+
+.drop-down-menue:hover .drop-down{
+    display: flex;
+    transform: translateY(-10px);
+    transition: transform 1s;
+}
+.drop-down-menue:hover .drop-down:hover{
+
+    transform: translateY(0);
+}
+
+.drop-down li a{
+    padding: 1rem 2rem;
+    display: inline-block;
+}
+
+section{
+    height: 90vh;
+    width: 100%;
+    background-color: red;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    font-size: 3rem;
+    background-color: aquamarine;
+    color: yellowgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    transition: transform;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.box:hover{
+    /* transform: rotate(10deg); */
+    transform: translateX(-20px);
 }

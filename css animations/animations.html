@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>glider animations</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 4px;
+            border-radius: 50px;
+            background-color: #aaa;
+            position: relative;
+            box-shadow:.5px .5px 4px #666;
+        }
+
+        .box::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            border-radius: 50px;
+            background-color: blueviolet;
+
+            animation: glide 5s ease-out infinite;
+        }
+
+        @keyframes glide {
+            0%{
+                width: 1px;
+            }
+
+            100%{
+                width: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="box"></div>
+</body>
+</html>
